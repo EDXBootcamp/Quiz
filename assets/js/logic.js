@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Other Variables
     var currentQuestionIndex = 0;
-    let timerSeconds = 20; // Initial timer value in seconds
+    let timerSeconds = 180; // Initial timer value in seconds
     let timerInterval;
     const penaltyTime = 10
   
