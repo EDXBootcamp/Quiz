@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const questionsScreen = document.getElementById("questions");
     const endScreen = document.getElementById("end-screen");
     const feedbackDiv = document.getElementById("feedback");
+
+
+    const correctAudio = new Audio('./assets/sfx/correct.wav');
+    const wrongAudio = new Audio('./assets/sfx/incorrect.wav');
+
   
     // Other Variables
     var currentQuestionIndex = 0;
@@ -54,9 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
         if (selectedAnswer === correctAnswer) {
           feedbackDiv.textContent = "Correct!";
+          playAudio(correctAudio);
         } else {
           feedbackDiv.textContent = "Incorrect!";
           timerSeconds -= penaltyTime; // Penalty for incorrect answer
+          playAudio(wrongAudio);
         }
   
         feedbackDiv.classList.remove("hide");
@@ -72,6 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
           endQuiz();
         }
       }
+    }
+
+    // Function to play audio
+    function playAudio(audio) {
+        audio.currentTime = 0; // Reset audio to the beginning
+        audio.play();
     }
   
     // Function to start the timer
