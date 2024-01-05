@@ -64,7 +64,7 @@ To get started with Coding Quiz Challenge, follow these steps:
 
 ## Screenshots
 
-![Password Generator Screenshot](screenshot.png)
+![Coding Quiz Challenge Screenshot](screenshot.png)
 
 ## Deployment
 
